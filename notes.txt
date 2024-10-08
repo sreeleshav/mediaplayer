@@ -1,0 +1,50 @@
+props sharing:
+-------------
+
+-its a tehnique used to pass data from parent component to child component
+
+prent.jsx:
+
+return(
+    <child data={content}/>
+)
+
+child.jsx:
+
+function child(prop){
+
+}
+prop=>{data:content}
+
+
+->state lifting:
+-technique to pass data from 
+
+
+
+
+
+props drilling: sharing data through unnesssory/unwarnted components
+---------------
+
+we want  to send Add() to Videocard()
+but the way is: Add>Home>Video>Videocard
+the infoemation need only Videocard
+but the information pass all the function this method is called coupling
+
+coupling:is considered as the measure of involving of unnesssory components in a props drilling case
+
+->React Redux:its conceept/technique defined for overcoming props drilling and passing data in a more efficent way
+
+-redux consist of a global store concept which can contain states that can be accessed by any component in react app.
+through this,a component can pass data through the global store state to other component without involving other components
+
+___________________________________________________________________________________________________________________________
+
+Redux workflow
+--------------------
+
+To pass the information Add to Videocard
+
+Add-->(dispatch)-->Action--> -->(payload)-->Global store (reducer) -->globalstore inside State ==> Videocard
+
